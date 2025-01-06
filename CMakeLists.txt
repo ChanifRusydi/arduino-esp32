@@ -79,6 +79,7 @@ set(CORE_SRCS
   )
 
 set(ARDUINO_ALL_LIBRARIES
+  Adafruit_SSD1306
   ArduinoOTA
   AsyncUDP
   BLE
@@ -88,6 +89,7 @@ set(ARDUINO_ALL_LIBRARIES
   ESP_I2S
   ESP_NOW
   ESP_SR
+  ESP32Servo
   ESPmDNS
   Ethernet
   FFat
@@ -99,26 +101,27 @@ set(ARDUINO_ALL_LIBRARIES
   Matter
   NetBIOS
   Network
+  NetworkClientSecure
   OpenThread
   PPP
   Preferences
   RainMaker
-  SD_MMC
   SD
+  SD_MMC
   SimpleBLE
-  SPIFFS
   SPI
+  SPIFFS
+  Stepper
   Ticker
   Update
   USB
   WebServer
-  NetworkClientSecure
   WiFi
   WiFiProv
   Wire
   Zigbee
   )
-
+set(ARDUINO_LIBRARY_Adafruit_SSD1306_SRCS /libraries/Adafruit_SSD1306/Adafruit_SSD1306.cpp)
 set(ARDUINO_LIBRARY_ArduinoOTA_SRCS libraries/ArduinoOTA/src/ArduinoOTA.cpp)
 
 set(ARDUINO_LIBRARY_AsyncUDP_SRCS libraries/AsyncUDP/src/AsyncUDP.cpp)
@@ -142,6 +145,10 @@ set(ARDUINO_LIBRARY_ESP_NOW_SRCS
 set(ARDUINO_LIBRARY_ESP_SR_SRCS
   libraries/ESP_SR/src/ESP_SR.cpp
   libraries/ESP_SR/src/esp32-hal-sr.c)
+
+set(ARDUINO_LIBRARY_ESPServo_SRCS 
+  libraries/ESP32Servo/src/ESP32Servo.cpp
+  libraries/ESP32Servo/src/ESP32PWM.cpp)
 
 set(ARDUINO_LIBRARY_ESPmDNS_SRCS libraries/ESPmDNS/src/ESPmDNS.cpp)
 
@@ -209,6 +216,8 @@ set(ARDUINO_LIBRARY_SD_SRCS
 set(ARDUINO_LIBRARY_SimpleBLE_SRCS libraries/SimpleBLE/src/SimpleBLE.cpp)
 
 set(ARDUINO_LIBRARY_SPIFFS_SRCS libraries/SPIFFS/src/SPIFFS.cpp)
+
+set(ARDUINO_LIBRARY_Stepper_SRCS libraries/Stepper/src/Stepper.cpp)
 
 set(ARDUINO_LIBRARY_SPI_SRCS libraries/SPI/src/SPI.cpp)
 
